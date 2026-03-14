@@ -11,23 +11,30 @@ jobs:
 
     steps:
 
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-    - uses: actions/setup-python@v5
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
       with:
         python-version: 3.11
 
-    - name: Install deps
+
+    - name: Install dependencies
       run: |
         pip install -r requirements.txt
         pip install pytest selenium webdriver-manager pytest-html
 
+
     - name: Install Chrome
       uses: browser-actions/setup-chrome@v1
 
+
     - name: Run tests
       run: |
-        pytest -v -s --headless --html=Reports/report.html --self-contained-html
+        pytest -v -s --html=Reports/report.html --self-contained-html
+
 
     - name: Upload HTML report
       uses: actions/upload-artifact@v4
