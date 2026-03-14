@@ -33,7 +33,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -s -v -m "sanity" --html=Reports/report.html --self-contained-html
+        pytest -s -v -m "sanity" --html=Reports/report.html --browser chrome --self-contained-html
 
 
     - name: Upload HTML report
