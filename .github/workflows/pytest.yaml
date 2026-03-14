@@ -27,4 +27,10 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -v -s --headless
+        pytest -v -s --headless --html=Reports/report.html --self-contained-html
+
+    - name: Upload HTML report
+      uses: actions/upload-artifact@v4
+      with:
+        name: pytest-report
+        path: Reports/report.html
