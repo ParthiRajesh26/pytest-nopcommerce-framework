@@ -1,0 +1,2 @@
+[32mINFO    [0m root:test_login.py:36 ************  STARTED --- test_login ************
+[32mINFO    [0m root:test_login.py:48 ********* FINISHED TEST CASE 2 **********
